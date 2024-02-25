@@ -1,6 +1,6 @@
 # Mandelbrot WIP
 
-[Link to implementation](index.html)
+[Link to implementation](https://htmlpreview.github.io/?https://github.com/taheikura/mandelbrot_javascript/blob/main/index.html)
 
 ## Goals
 
@@ -27,3 +27,4 @@ Javascript and GPU accelerated floating point number precision is limited. Reaso
 
 6.3.2023 First working version
 
+25.2.2024 Add zooming
