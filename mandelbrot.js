@@ -22,7 +22,7 @@ function onLoad() {
 
     canvas.addEventListener("wheel", debounce((e) => onWheel(e)));
 
-    draw(ctx, 50, palette);
+    draw(ctx, 25, palette);
 }
 
 function generatePalette() {
@@ -72,7 +72,7 @@ function iterateMandelbrot(x0, y0, maxIterations) {
 // Support panning and zooming
 function processLine(image, maxIterations, palette, y) {
     const y0 = (y + originy) / zoom;
-
+    
     for (let x = 0, i = 0; x < image.data.length; x++, i+=4) {
         const x0 = (x + originx) / zoom;
         const n = iterateMandelbrot(x0, y0, maxIterations);
@@ -112,11 +112,10 @@ function onWheel(e) {
     const mousex = e.clientX - IMAGE_WIDTH/2;
     const mousey = e.clientY - IMAGE_HEIGHT/2;
 
-    // I will figure out how to improve usability at high zoom levels later
     newZoom = zoom < 5000 ? zoom + e.wheelDelta*2 : zoom;
 
     newOriginX = originx + mousex/2;
     newOriginY = originy + mousey/2;
 
-    draw(ctx, 50, palette);
+    draw(ctx, 25, palette);
 }
